@@ -1,18 +1,16 @@
 ﻿namespace Simple_Monitor
 {
-    class Li_ionBattries : BatteryChecker, ILi_ionBattery
+    class Li_ionBattries : ILi_ionBattery
     {
         public bool batteryIsOk(float temperature, float soc, float chargeRate)
         {
-            Li_ionBattries checker = new Li_ionBattries();
-            
-            if (!checker.temperatureCheck(temperature))
+            if (!temperatureCheck(temperature))
                 return false;
 
-            if (!checker.socCheck(soc))
+            if (!socCheck(soc))
                 return false;
 
-            if (!checker.chargeRateCheck(chargeRate))
+            if (!chargeRateCheck(chargeRate))
                 return false;
 
             return true;

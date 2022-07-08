@@ -2,7 +2,7 @@
 
 namespace Simple_Monitor
 {
-    class Lithium_SiliconBatteries : BatteryChecker, ILithium_SiliconBattery
+    class Lithium_SiliconBatteries : ILithium_SiliconBattery
     {
         public bool batteryIsOk(float temperature, float soc, float chargeRate, float doc, float coc)
         {

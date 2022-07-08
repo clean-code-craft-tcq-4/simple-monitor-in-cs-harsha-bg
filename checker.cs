@@ -1,9 +1,9 @@
 ﻿namespace Simple_Monitor
 {
-    class Li_ionTestMethods : Li_ionBattries
+    class checker : Li_ionBattries
     {
         static Li_ionBattries li_Ion = new Li_ionBattries();
-        static int Main()
+        public static int Main()
         {
             ExpectTrueTestMethod();
             ExpectFalseTestMethod();
@@ -12,12 +12,12 @@
 
         private static void ExpectTrueTestMethod()
         {
-            Expect(li_Ion.batteryIsOk(25, 70, 0.7f));
+            BatteryChecker.Expect(li_Ion.batteryIsOk(25, 70, 0.7f));
             string.Format("All ok").printMessage();
         }
         private static void ExpectFalseTestMethod()
         {
-            Expect(li_Ion.batteryIsOk(50, 85, 0.0f));
+            BatteryChecker.Expect(li_Ion.batteryIsOk(50, 85, 0.0f));
             string.Format("All not ok").printMessage();
         }
     }
