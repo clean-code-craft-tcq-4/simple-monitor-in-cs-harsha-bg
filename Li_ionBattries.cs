@@ -6,13 +6,16 @@
         {
             Li_ionBattries checker = new Li_ionBattries();
             
-            bool check;
-            check = checker.temperatureCheck(temperature);
-            check = checker.socCheck(soc);
-            check = checker.chargeRateCheck(chargeRate);
-             if(!check)
+            if (!checker.temperatureCheck(temperature))
                 return false;
-             return true;
+
+            if (!checker.socCheck(soc))
+                return false;
+
+            if (!checker.chargeRateCheck(chargeRate))
+                return false;
+
+            return true;
         }
         public bool temperatureCheck(float temperature)
         {
