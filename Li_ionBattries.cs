@@ -5,16 +5,14 @@
         public bool batteryIsOk(float temperature, float soc, float chargeRate)
         {
             Li_ionBattries checker = new Li_ionBattries();
-            if (!checker.temperatureCheck(temperature))
+            
+            bool check;
+            check = checker.temperatureCheck(temperature);
+            check = checker.socCheck(soc);
+            check = checker.chargeRateCheck(chargeRate);
+             if(!check)
                 return false;
-
-            if (!checker.socCheck(soc))
-                return false;
-
-            if (!checker.chargeRateCheck(chargeRate))
-                return false;
-
-            return true;
+             return true;
         }
         public bool temperatureCheck(float temperature)
         {
